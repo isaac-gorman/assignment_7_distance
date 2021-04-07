@@ -50,19 +50,16 @@ public class Username {
             userName = createUserName(firstName, lastName, n);
 
         // Step 8) Display the userName created by passing it to the displayString method
+            output = "Your new username is: " + userName;
+            displayString( output, "Display name");
 
         // Step 9) Determine the length of the string 'lastName' and assign it to 'strLen'
+            strLen = lastName.length();
 
         // Step 10.1) Via JOptionPane prompt the user to enter in a number that is no longer than 'strLen'.
         // - This will be accomplished by invoking the readInNumber(String title, int 10) method
-        // Step 10.2) Build the readInNumber()
-        // *********************************************************
-        // - - readInNumber sudo code:
-        // - - - declare local variable called 'aNumber'
-        // - - - prompt the user and enter a number and read it in via JOptionPane
-        // - - - if the number is greater than 100,000,000 reduce it by a factor of 10 (divide by 10)
-        // - - - return 'aNumber'
-        // *********************************************************
+            title = "Please enter a number that has no more than " + strLen + " digits:";
+            number = readInNumber(title, 10);
 
 
         // Step 11) Assign 'number' to copyNumber
@@ -143,6 +140,26 @@ public class Username {
             System.out.println(newName);
             return newName;
     } // end createUserName method
+    // *********************************************************
+
+
+    // Step 10.2) Build the readInNumber()
+    // *********************************************************
+    public static int readInNumber(String prompt, int number) {
+        // - - - declare local variable called 'aNumber'
+        int aNumber;
+        // - - - prompt the user and enter a number and read it in via JOptionPane
+        String inputNumber = JOptionPane.showInputDialog(null, prompt);
+        aNumber = Integer.parseInt(inputNumber);
+        // - - - if the number is greater than 100,000,000 reduce it by a factor of 10 (divide by 10)
+        if (aNumber > 100_000_000) {
+            aNumber /= number;
+            JOptionPane.showMessageDialog(null, "Your number has been reduced by a factor of " + number
+                                          ,"Number Reduction", JOptionPane.INFORMATION_MESSAGE);
+        } // end if statement
+        // - - - return 'aNumber'
+        return aNumber;
+    } // end of readInNumber
     // *********************************************************
 
 
