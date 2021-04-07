@@ -5,32 +5,31 @@
 // Assignment#:   7
 // DueDate:       April 14, 2021 @11:59 pm
 // -----------------------------------------------------
-
+package com.company;
 
 // Step 1) Import packages for classes will need to build this program
 // - swing class: JOptionPane GUI
 // - Random class: Generating random numbers
-// -
-package com.company;
+import javax.swing.*;
+import java.util.Random;
 
 public class Username {
 
     public static void main(String[] args) {
 
         // Step 2) Declare all the variables that will be used for this program
+            int strLen, number, n,
+                singleNumber, copyNumber;
+            String title, firstName, lastName,
+                   fullName, userName, output;
 
         // Step 3) Instantiate an object from the Random class
+            Random rand = new Random();
 
         // Step 4.1) Invoke the method readInName(String title, salutation, keyboard object)
         // - to read in the users first and last name. Salutation must be either Dr. Mr, Mrs, Ms
-        // Step 4.2) Build the readInName method. Using JOptionPane read in the names
-        // *********************************************************
-        // - - readInName sudo code:
-        // - - - declare local variable called 'oneString'
-        // - - - prompt the user to enter their full name and then read it in via JOptionPane
-        // - - - add on a salutation
-        // - - - return 'oneString'
-        // *********************************************************
+        title = "Please enter your first name:";
+        firstName = readInName(title, "Dr. ");
 
 
         // Step 5.1) Generate a random number between 1 - 100, then display that number by invoking the displayString method
@@ -98,7 +97,25 @@ public class Username {
         // Step 14) Build the string for the final output
 
         // Step 15) Display the final 'output' string by invoking the method 'displayString'
-        
+
 
     } // end of main method
+
+
+    // Step 4.2) Build the readInName method. Using JOptionPane read in the names
+    // *********************************************************
+    public static String readInName(String prompt, String salutation){
+        // - - - declare local variable called 'oneString'
+        // - - - prompt the user to enter their full name and then read it in via JOptionPane
+        String oneString =
+                JOptionPane.showInputDialog(null, prompt);
+        // - - - add on a salutation
+        oneString = salutation + oneString ;
+        // - - - return 'oneString'
+        return oneString;
+    } // end of readInName method
+    // *********************************************************
+
+
+
 } // end class Username
