@@ -1,1 +1,1 @@
-# assignment_7_distance
+# p1_java_assignments
