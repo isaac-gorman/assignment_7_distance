@@ -1,0 +1,22 @@
+
+public class AssignmentOperators {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a, b, c;
+		
+		a = 4;
+		b = 7;
+		c = 10;
+		
+		a -= 4;
+		b *= a;
+		++c;
+		
+		System.out.println("value of a: " + a);
+		System.out.println("value of b: " + b);
+		System.out.println("value of c: " + c);
+	}
+
+}
