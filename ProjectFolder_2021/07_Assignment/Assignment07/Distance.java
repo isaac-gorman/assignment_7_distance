@@ -86,7 +86,7 @@ public class Distance {
         double delta_y = Math.pow((b2 - b1) , 2);
         answer = Math.sqrt((delta_x + delta_y));
         return answer;
-    }
+    } // end calculate method
 
     // Step 7.2) displayString method
     public static void displayString(String outString, String header) {
@@ -96,7 +96,7 @@ public class Distance {
                                         outString,
                                         header,
                                         JOptionPane.INFORMATION_MESSAGE);
-    }
+    } // end displayString method
 
     // Step 8.2) changePoints method
     public static void changePoints(int a1, int b1, int a2, int b2) {
@@ -120,6 +120,6 @@ public class Distance {
                                         "Inside 'changePoints' method ",
                                         JOptionPane.INFORMATION_MESSAGE);
 
-    }
+    } // end changePoints method
 
-}
+} // end Distance Class
