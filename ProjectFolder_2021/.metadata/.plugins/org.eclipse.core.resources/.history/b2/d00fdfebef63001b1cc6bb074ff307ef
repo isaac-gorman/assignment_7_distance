@@ -1,0 +1,16 @@
+// ------------------------------
+// Programmer:    Isaac Gorman 
+// Course:        COSC 1336 Section
+// Semester:      Spring 2021
+// Assignment #:  1a
+// Due Date:      February 4, 2021
+// ------------------------------
+
+public class FirstJavaProgram {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	} // end method main 
+
+}
