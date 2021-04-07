@@ -11,6 +11,7 @@ package com.company;
 // - swing class: JOptionPane GUI
 // - Random class: Generating random numbers
 import javax.swing.*;
+import java.util.Locale;
 import java.util.Random;
 
 public class Username {
@@ -31,30 +32,22 @@ public class Username {
         title = "Please enter your first name:";
         firstName = readInName(title, "Dr. ");
 
+        title = "Please enter your last name:";
+        lastName = readInName(title, "");
 
         // Step 5.1) Generate a random number between 1 - 100, then display that number by invoking the displayString method
-        // Step 5.2) Build the displayString method to display information via JOptionPane on a dialogue box
-        // *********************************************************
-        // - - displayString sudo code:
-        // - - - display the formal parameter 'outString' use JOptionPane
-        // *********************************************************
-
+            n = rand.nextInt(100) + 1;
+            output = "Your number will be: " + n;
+            displayString(output, "Display number");
 
         // Step 6) Using conditional logic evaluate if the number is larger than 70. If so invoke displayString
+            if (n > 70) {
+                output = "You will have a large number";
+                displayString(output, "Display large number");
+            } // end if statement
 
         // Step 7.1) Invoke createUserName(String firstName, String lastName, int randomNumber)
-        // Step 7.2) Build createUserName() to create a unique username based on the firstName, lastName, and randomNumber
-        // *********************************************************
-        // - - createUserName sudo code:
-        // - - - declare local variable 'newName'
-        // - - - strip off the salutation
-        // - - - construct a username with the first character or the first name,
-        // - - - three characters of the last name (starting with the second letter),
-        // - - - and the with a random number from 1 - 100
-        // - - - convert the username to lowercase
-        // - - - return 'newName'
-        // *********************************************************
-
+            userName = createUserName(firstName, lastName, n);
 
         // Step 8) Display the userName created by passing it to the displayString method
 
@@ -116,6 +109,41 @@ public class Username {
     } // end of readInName method
     // *********************************************************
 
+
+    // Step 5.2) Build the displayString method to display information via JOptionPane on a dialogue box
+    // *********************************************************
+    public static void displayString(String outString, String header) {
+        // - - - display the formal parameter 'outString' use JOptionPane
+        JOptionPane.showMessageDialog(null,
+                                       outString,
+                                       header,
+                                       JOptionPane.INFORMATION_MESSAGE);
+    } // end of displayString method
+    // *********************************************************
+
+
+    // Step 7.2) Build createUserName() to create a unique username based on the firstName, lastName, and randomNumber
+    // *********************************************************
+    public static String createUserName(String first, String last, int n) {
+        // - - - declare local variable 'newName'
+            String newName;
+        // - - - strip off the salutation
+            first = first.substring(4);
+        // - - - construct a username with the first character or the first name,
+        // - - - I chose to use .substring() instead of .charAt() to practice .substring as a new concept
+            first = first.substring(0,1);
+            System.out.println(first);
+        // - - - three characters of the last name (starting with the second letter),
+            last = last.substring(1, 4);
+        // - - - and the with a random number from 1 - 100
+            newName = first + last  + n;
+        // - - - convert the username to lowercase
+            newName = newName.toLowerCase();
+        // - - - return 'newName'
+            System.out.println(newName);
+            return newName;
+    } // end createUserName method
+    // *********************************************************
 
 
 } // end class Username
