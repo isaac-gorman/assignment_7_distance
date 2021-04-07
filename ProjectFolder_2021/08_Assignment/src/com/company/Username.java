@@ -63,30 +63,29 @@ public class Username {
 
 
         // Step 11) Assign 'number' to copyNumber
+            copyNumber = number;
+
+            // reset the value of 'output'
+            output = "";
 
         // Step 12.1) Using a while loop invoke both getSingleNumber() and changeNumber()
         // - till the number is displayed backwards one number per line.
-        // Step 12.2) Build the getSingleNumber() method
-        // *********************************************************
-        // - - getSingleNumber sudo code:
-        // - - - declare local variable called 'oneNumber'
-        // - - - get the last digit 'n' and the return it
-        // *********************************************************
-
-
-        // Step 12.2) Build the changeNumber() method
-        // *********************************************************
-        // - - changeNumber sudo code:
-        // - - - chop off (truncate) the last digit of number 'n' abd then return ...
-        // - - - ... what is left of number 'n'
-        // *********************************************************
+            while (copyNumber != 0) {
+                singleNumber = getSingleNumber(copyNumber);
+                output = output + singleNumber + "\n";
+                copyNumber = changeNumber(copyNumber);
+            } // end while loop
 
 
         // Step 13) Invoke the displayString() to display the 'output' string
+            displayString(output, "Your number backwards");
 
         // Step 14) Build the string for the final output
+            fullName = firstName + " " + lastName;
+            output = "\nThis program was written by " +  fullName + ". Thanks for using it." + "\nEnd of program.";
 
         // Step 15) Display the final 'output' string by invoking the method 'displayString'
+            displayString(output, "Good bye!");
 
 
     } // end of main method
@@ -159,8 +158,35 @@ public class Username {
         } // end if statement
         // - - - return 'aNumber'
         return aNumber;
-    } // end of readInNumber
+    } // end of readInNumber method
     // *********************************************************
+
+
+    // Step 12.2) Build the getSingleNumber() method
+    // *********************************************************
+    public static int getSingleNumber(int n) {
+        // - - - declare local variable called 'oneNumber'
+        int oneNumber;
+        // - - - get the last digit 'n'
+        oneNumber = n % 10;
+        // - - - and the return it
+        return oneNumber;
+    } // end getSingleNumber method
+    // *********************************************************
+
+
+    // Step 12.2) Build the changeNumber() method
+    // *********************************************************
+    public static int changeNumber(int n) {
+        // - - - chop off (truncate) the last digit of number 'n'
+        n = n / 10;
+        // - - - return what is left of 'n'
+        return n;
+    } // end changeNumber method
+    // *********************************************************
+
+
+
 
 
 } // end class Username
